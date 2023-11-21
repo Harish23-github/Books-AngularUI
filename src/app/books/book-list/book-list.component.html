@@ -1,0 +1,120 @@
+<div *ngIf="showFirstOrderBooks && firstOrderBooks.length > 0">
+    <div>
+        <h6 style="text-align: center;">SORTED BOOKS USING LINQ</h6>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Author Name</th>
+                    <th>Title</th>
+                    <th>Publisher</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of firstOrderBooks; let i=index">
+                    <td>{{i+1}}</td>
+                    <th>{{row.authorName}}</th>
+                    <td>{{row.title}}</td>
+                    <td>{{row.publisher}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="redirectToCitation('chicago', row.id)">Generate Chicago Citation</button>&nbsp;
+                        <button class="btn btn-primary" (click)="redirectToCitation('mla', row.id)">Generate MLA Citation</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Sorted Books using Sproc -->
+<div *ngIf="showFirstOrderBooksUsingSproc && firstOrderBooksUsingSproc.length > 0">
+    <div>
+        <h6 style="text-align: center;">SORTED BOOKS USING STORED PROCEDURE</h6>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Author Name</th>
+                    <th>Title</th>
+                    <th>Publisher</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of firstOrderBooksUsingSproc; let i=index">
+                <td>{{i+1}}</td>
+                <th>{{row.authorName}}</th>
+                <td>{{row.title}}</td>
+                <td>{{row.publisher}}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="redirectToCitation('chicago', row.id)">Generate Chicago Citation</button>&nbsp;
+                  <button class="btn btn-primary" (click)="redirectToCitation('mla', row.id)">Generate MLA Citation</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Second Sorted Books using Linq -->
+<div *ngIf="showSecondOrderBooks && secondOrderBooks.length > 0">
+    <div>
+        <h6 style="text-align: center;">SECOND SORTED BOOKS USING LINQ</h6>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Author Name</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of secondOrderBooks; let i=index">
+                    <td>{{i+1}}</td>
+                    <th>{{row.authorName}}</th>
+                    <td>{{row.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Second Sorted Books using Sproc -->
+<div *ngIf="showSecondOrderSortedBooksUsingSproc && secondOrderSortedBooksUsingSproc.length > 0">
+    <div>
+        <h6 style="text-align: center;">SECOND SORTED BOOKS USING STORED PROCEDURE</h6>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Author Name</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of secondOrderSortedBooksUsingSproc; let i=index">
+                    <td>{{i+1}}</td>
+                    <th>{{row.authorName}}</th>
+                    <td>{{row.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Total Price -->
+<div *ngIf="showTotalPrice">
+    <div>
+        <h6 style="text-align: center;">SECOND SORTED BOOKS USING STORED PROCEDURE</h6>
+    </div>
+    <h5>Total Books Price: Rs. {{totalPrice}}</h5>
+</div>

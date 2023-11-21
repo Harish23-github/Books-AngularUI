@@ -1,0 +1,9 @@
+<div style="display: flex; justify-content: space-around; margin: 10px;">
+    <button class="btn btn-primary" (click)="onButtonClick(constants.firstSortedBooks)">{{constants.firstSortedBooks}}</button>
+    <button class="btn btn-primary" (click)="onButtonClick(constants.firstSortedBooksUsingSproc)">{{constants.firstSortedBooksUsingSproc}}</button>
+    <button class="btn btn-primary" (click)="onButtonClick(constants.secondSortedBooks)">{{constants.secondSortedBooks}}</button>
+    <button class="btn btn-primary" (click)="onButtonClick(constants.secondSortedBooksUsingSproc)">{{constants.secondSortedBooksUsingSproc}}</button>
+    <button class="btn btn-primary" (click)="onButtonClick(constants.totalPrice)">{{constants.totalPrice}}</button>
+</div>
+<h1 style="text-align: center;" *ngIf="isHomePage">Welcome</h1>
+<app-book-list></app-book-list>
